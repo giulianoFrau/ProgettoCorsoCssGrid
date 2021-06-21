@@ -20,12 +20,20 @@ body {
   display: grid;
   grid-template-rows: 80vh min-content 40vh repeat(3, min-content);
   /*min content xk vogliamo che gli elementi si adattino alla pagina e non si allarghino se è piu grande (come il max content)*/
-  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
   /*usiamo larghezza massima 140 px e min content in modo che quando riduciamo non sballa tutto, aggiungiamo 1fr 
     prima e dopo la colonna in quanto cosi abbiamo centrate le "8 colonne centrali" eccetto per la sidebar da 8 rem*/ }
-  .container > * {
-    padding: 40px;
-    font-size: 3rem; }
+
+.heading-1, .heading-2, .heading-3, .heading-4 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400; }
+
+.heading-4 {
+  font-size: 1.9rem; }
+  .heading-4--light {
+    color: #f9f7f6; }
+  .heading-4--dark {
+    color: #54483A; }
 
 .sidebar {
   background-color: #c69963;
@@ -41,8 +49,26 @@ body {
   grid-column: col-start 7/full-end; }
 
 .features {
-  background-color: #aaa;
-  grid-column: center-start/center-end; }
+  grid-column: center-start/center-end;
+  margin: 15rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 6rem;
+  align-items: start; }
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem; }
+  .feature__icon {
+    fill: #c69963;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2;
+    transform: translateY(-1rem); }
+  .feature__text {
+    font-size: 1.7rem; }
 
 .story__pictures {
   background-color: #c69963;
