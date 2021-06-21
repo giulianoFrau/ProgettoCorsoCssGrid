@@ -37,3 +37,8 @@ body {
     font-weight: 300;
     line-height: 1.6;
 }
+
+.container{
+    display: grid;
+    grid-template-rows: 80vh min-content  40vh repeat(3,min-content); /*min content xk vogliamo che gli elementi si adattino alla pagina e non si allarghino se è piu grande (come il max content)*/
+}
