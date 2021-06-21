@@ -12,15 +12,15 @@ html {
 
 body {
   font-family: "Nunito", sans-serif;
-  color: color-grey-dark-2;
+  color: #6D5D4B;
   font-weight: 300;
   line-height: 1.6; }
 
 .container {
   display: grid;
-  grid-template-rows: 80vh min-content 40vh repeat(3, min-content);
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   /*min content xk vogliamo che gli elementi si adattino alla pagina e non si allarghino se è piu grande (come il max content)*/
-  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
   /*usiamo larghezza massima 140 px e min content in modo che quando riduciamo non sballa tutto, aggiungiamo 1fr 
     prima e dopo la colonna in quanto cosi abbiamo centrate le "8 colonne centrali" eccetto per la sidebar da 8 rem*/ }
 
