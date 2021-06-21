@@ -19,10 +19,15 @@ body {
 .container {
   display: grid;
   grid-template-rows: 80vh min-content 40vh repeat(3, min-content);
-  /*min content xk vogliamo che gli elementi si adattino alla pagina e non si allarghino se è piu grande (come il max content)*/ }
+  /*min content xk vogliamo che gli elementi si adattino alla pagina e non si allarghino se è piu grande (come il max content)*/
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
+  /*usiamo larghezza massima 140 px e min content in modo che quando riduciamo non sballa tutto, aggiungiamo 1fr 
+    prima e dopo la colonna in quanto cosi abbiamo centrate le "8 colonne centrali" eccetto per la sidebar da 8 rem*/ }
 
 .sidebar {
-  background-color: #c69963; }
+  background-color: #c69963;
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1/-1; }
 
 .header {
   background-color: #54483A; }
@@ -31,7 +36,8 @@ body {
   background-color: #101d2c; }
 
 .features {
-  background-color: #aaa; }
+  background-color: #aaa;
+  grid-column: center-start/center-end; }
 
 .story__pictures {
   background-color: #c69963; }
@@ -43,7 +49,9 @@ body {
   background-color: #101d2c; }
 
 .gallery {
-  background-color: #54483A; }
+  background-color: #54483A;
+  grid-column: full-start/full-end; }
 
 .footer {
-  background-color: #101d2c; }
+  background-color: #101d2c;
+  grid-column: full-start/full-end; }
