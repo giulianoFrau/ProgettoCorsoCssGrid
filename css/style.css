@@ -120,7 +120,8 @@ body {
   padding: 6rem 12rem;
   display: flex;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  align-items: flex-start; }
 
 .story__text {
   font-size: 1.5rem;
